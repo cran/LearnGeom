@@ -1,0 +1,15 @@
+Scissor<-function(P,angle,angle0,l,color="transparent",time=0){
+  Draw(P,color)
+  ang1=right(angle,angle0)
+  Q=CreateSegmentAngle(P,ang1,l)
+  Sys.sleep(time)
+  Draw(Q)
+  Draw(Q[2,],color)
+  ang2=left(2*angle,ang1)
+  R=CreateSegmentAngle(Q[2,],ang2,l)
+  Sys.sleep(time)
+  Draw(R)
+  Draw(R[2,],color)
+  ang3=right(angle,ang2)
+  return(c(R[2,],ang3))
+}

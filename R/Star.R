@@ -1,0 +1,37 @@
+#' Creates a closed curve with the shape of a star. Each of the stars produced by this function is built through a simple iterative process based on segment drawing for certain angles and lengths. It can also produce regular polygons for some combinations of the parameters 
+#' 
+#' \code{Star} creates a star with multiple building possibilities
+#' @param P Vector containing the xy-coordinates of the starting point for the star
+#' @param angle Angle (0-360) that is related to the direction of the two segments which are drawn in each of the steps of the process. This parameter really represents the angle (in clockwise and anti-clockwise direction) for the two first drawn segments, but it is modified according to rotations of 144 degrees in all the following steps, including the last one, which closes the curve.
+#' @param l Number that indicates the length side of the segments that are drawn. This parameter will determine the size of the star
+#' @param time Number of seconds to wait for the program before drawing each of the segments that make star. If no \code{time} is specified, default value is 0 (no waiting time). If the chosen time is very small (\code{time} < 0.05) it is possible that the program shows the plot directly. In this case, it should be increased the \code{time} parameter.
+#' @param color Color to indicate the points that are obtained during the process to draw the star. If missing, the points are not indicated and only the segments are drawn in the plot
+#' @return None. It produces the plot of a closed curve with the shape of a star, if the parameters are chosen properly
+#' @examples 
+#' x_min <- -5
+#' x_max <- 5
+#' y_min <- -5
+#' y_max <- 5
+#' CoordinatePlane(x_min, x_max, y_min, y_max)
+#' P <- c(0,0)
+#' angle <- 0
+#' l <- 1
+#' Star(P, angle, l)
+#' @references Abelson, H., & DiSessa, A. A. (1986). Turtle geometry: The computer as a medium for exploring mathematics. MIT press
+#' @export
+Star<-function(P,angle,l,time=0,color="transparent"){
+  A=144
+  total=0
+  salir=0
+  angle0=0
+  while (salir==0){
+    total=total+A
+    s=Scissor(P,angle,angle0,l,color,time)
+    P=s[1:2]
+    angle0=s[3]
+    angle0=left(A,angle0)
+    if ((total %% 360)==0){
+      salir=1
+    }
+  }
+}
