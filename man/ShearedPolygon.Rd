@@ -11,7 +11,7 @@ ShearedPolygon(Poly, k, direction)
 
 \item{k}{Number that represents the shear factor which is applied to the original polygon}
 
-\item{direction}{String with value "horizontal" or "vertical" which indicates the direction in which shearing is applied. Horizontal means the shearing is parallel to the *X* axis, while vertical means parallel to the *Y* axis}
+\item{direction}{String with value "horizontal" or "vertical" which indicates the direction in which shearing is applied. Horizontal means the shearing is parallel to the X axis, while vertical means parallel to the Y axis}
 }
 \value{
 Returns a sheared polygon, in any of the two axis, to the original one

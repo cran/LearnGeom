@@ -47,7 +47,12 @@ Draw<-function(object, colors=c("black","black"), label=FALSE){
         DrawSegmentPoints(object[1,],object[2,],colors[1])
       }
       if (class(object)[2]=="Arc"){
-        DrawArc(c(object[1],object[2]),object[3],object[4],object[5],colors[1])
+        if (object[6]==1){
+          DrawArc(c(object[1],object[2]),object[3],object[4],object[5],colors[1])
+        }
+        if (object[6]==2){
+          DrawArc(c(object[1],object[2]),object[3],max(c(object[4],object[5])),min(c(object[4],object[5]))+360,colors[1])
+        }
       }
   }
   return()

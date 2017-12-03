@@ -1,5 +1,25 @@
-## ------------------------------------------------------------------------
+## ----fig.width=6, fig.height=6, fig.align="center"-----------------------
 library(LearnGeom)
+x_min <- -5 
+x_max <- 5 
+y_min <- -5 
+y_max <- 5 
+CoordinatePlane(x_min, x_max, y_min, y_max) 
+P1 <- c(0,0) 
+P2 <- c(1,1) 
+P3 <- c(2,0)  
+Poly <- CreatePolygon(P1, P2, P3) 
+Draw(Poly, "blue") 
+Hepta <- CreateRegularPolygon(7, c(-3,0), 1)
+Draw(Hepta, "orange")
+L <- CreateLinePoints(c(-1,0), c(0,3))
+Draw(L, "red")
+S <- CreateSegmentAngle(c(0,-2), 60, 1)
+Draw(S, "black")
+A <- CreateArcAngles(c(3,-2), 1, 0, 180, "anticlock")
+Draw(A, "black")
+
+## ----fig.width=6, fig.height=6, fig.align="center"-----------------------
 x_min <- -5 
 x_max <- 5 
 y_min <- -5 
@@ -51,7 +71,7 @@ L2 <- CreateLinePoints(AC_mid,AC1)
 L3 <- CreateLinePoints(BC_mid,BC1)
 I <- IntersectLines(L1,L2) 
 
-## ------------------------------------------------------------------------
+## ----fig.width=6, fig.height=6, fig.align="center"-----------------------
 x_min <- -6
 x_max <- 6
 y_min <- -6
@@ -67,7 +87,7 @@ Draw(L2, "red")
 Draw(L3, "red")
 Draw(I, "red")
 
-## ------------------------------------------------------------------------
+## ----fig.width=6, fig.height=6, fig.align="center"-----------------------
 ## Creation of the starting hexagon, Hexa0
 x_min <- -5; x_max <- 5; y_min <- -5; y_max <- 5
 CoordinatePlane(x_min, x_max, y_min, y_max)
@@ -99,7 +119,7 @@ L2 <- CreateLinePoints(Hexa1[2,],Hexa1[3,])
 Hexa1 <- ReflectedPolygon(Hexa1,L1)
 Hexa2 <- ReflectedPolygon(Hexa1,L2)
 
-## ------------------------------------------------------------------------
+## ----fig.width=6, fig.height=6, fig.align="center"-----------------------
 x_min <- -6
 x_max <- 6
 y_min <- -6
@@ -113,7 +133,7 @@ CoordinatePlane(x_min, x_max, y_min, y_max)
 it <- 3
 Sierpinski(Tri, it)
 
-## ------------------------------------------------------------------------
+## ----fig.width=6, fig.height=6, fig.align="center"-----------------------
 x_min <- -6
 x_max <- 6
 y_min <- -4
@@ -128,7 +148,7 @@ f <- 1
 it <- 4
 FractalSegment(P1, P2, angle, cut1, cut2, f, it)
 
-## ------------------------------------------------------------------------
+## ----fig.width=6, fig.height=6, fig.align="center"-----------------------
 x_min <- -6
 x_max <- 6
 y_min <- -4
@@ -143,7 +163,7 @@ f <- 1
 it <- 4
 FractalSegment(P1, P2, angle, cut1, cut2, f, it)
 
-## ------------------------------------------------------------------------
+## ----fig.width=6, fig.height=6, fig.align="center"-----------------------
 P=c(0,0)
 CoordinatePlane(-100,100,-50,150)
 Duopoly(P,1,1,1,-3)

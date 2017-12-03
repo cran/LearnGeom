@@ -1,6 +1,8 @@
-DrawArc<-function(C, r, angle1, angle2, color){
-  angle1_rad=2*pi*angle1/360
-  angle2_rad=2*pi*angle2/360
+DrawArc<-function(C, r, angle1, angle2, color="black"){
+  angle1_=min(c(angle1,angle2))
+  angle2_=max(c(angle1,angle2))
+  angle1_rad=2*pi*angle1_/360
+  angle2_rad=2*pi*angle2_/360
   partition=seq(angle1_rad,angle2_rad,(angle2_rad-angle1_rad)/100)
   P1=c(C[1]+r*cos(partition[1]),C[2]+r*sin(partition[1]))
   for (t in partition[2:length(partition)]){

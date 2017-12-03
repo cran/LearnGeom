@@ -2,32 +2,32 @@
 title: "Learning Plane Geometry "
 author: "Alvaro Briz Redon"
 date: "`r Sys.Date()`"
-output: rmarkdown::html_vignette
+output: pdf_document
 vignette: >
-  %\VignetteIndexEntry{Vignette Title}
+  %\VignetteIndexEntry{LearnGeom}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
 
 ## Introduction
 
-Several authors defend that learning to program provides powerful strategies for thinking, designing and solving problems. They talk about a two-phase process: first, the solution of the problem must be found, but then this solution has to be rewritten in an alternative and precise way so that it can be translated to a language that is understood by the computer.
+Several authors defend that learning to program provides powerful strategies for thinking, designing and solving problems. They talk about a two-phase process: first, the solution of the problem must be found, but then this solution has to be rewritten in an alternative and precise way in a language that can be understood by the computer.
 
-In addition, programming is capable of providing certain opportunities that few mental activities are in a position to do. According to Seymour Papert (1928-2016), programming not only allows you to communicate with a computer, but also to explore the way you think, to improve your logical reasoning and to increase your capacity to correct your own mistakes.
+In addition, programming provides certain opportunities to the user that few mental activities are in a position to do. According to Seymour Papert (1928-2016), programming not only allows you to communicate with a computer, but also to explore the way you think, to improve your logical reasoning and to increase your capacity to correct your own mistakes.
 
-There are multiple studies that confirm the benefits of programming on young students. For example, in the early 1970s, it was concluded in a survey that the use of LOGO programming language could enhance the reading ability of some students, as well as increasing the interest in learning and the level of self-confidence in many of them. Moreover, beyond all these aspects, learning through the use of a programming language is usually more interesting and exciting for students. For this reason, programming has been used as a mean to study Mathematics during the last decades, with overall successful results.
+There are multiple studies that confirm the benefits of programming on young students. For example, in the early 1970s, it was concluded in a survey conducted by Wallace Feurzeig (1927-2013) that the use of LOGO programming language could enhance the reading ability of some students, as well as increasing the interest in learning and the level of self-confidence in many of them. Moreover, beyond all these aspects, learning through the use of a programming language is usually more interesting and exciting for students. For this reason, programming languages have been used as a tool to study Mathematics during the last decades, with overall successful results.
 
-Of course, there are some difficulties when teaching young students to program, but there are numerous strategies to reduce them. Code simplification, problem subdivision or the creation by the teachers of structures more simple than the ones existing in the programming language are some of them.
+Of course, there are some difficulties when teaching young students to program, but there are numerous strategies to reduce them. Code simplification, problem subdivision or the creation by the tutors of structures more simple than the ones existing in the programming language are some of them.
 
-The package LearnGeom has been created with the hope of becoming useful to young students (and their teachers) to learn (and teach) plane geometry while programming in R. Moreover, it could also be interesting for novice programmers of all kind, or even to skillful programmers with a particular interest in some of the topics that can benefit from the functions of this package.
+The package *LearnGeom* has been created with the hope of becoming useful to young students (and their teachers) to learn (and teach) plane geometry while programming in R.
 
 ## How to start? Basic functions of the package
 
-The package provides functions to treat plane geometry and it is expected that the user works on a coordinate plane in order to manipulate different geometric objects and constructions. The function *CoordinatePlane* allows the user to plot an empty coordinate plane with customizable limits for the *X* and *Y* axis. Once a coordinate plane is started, it is time to create and plot on it different geometric objects. 
+The package provides several functions to work plane geometry, so it is expected that the user works on a coordinate plane in order to manipulate different geometric objects and constructions. The function *CoordinatePlane* allows the user to plot an empty coordinate plane with customizable limits for the *X* and *Y* axis. Once a coordinate plane is started, it is time to create and plot on it different geometric objects. 
 
 The basic geometric objects that can be used in this version of the package are five: points, segments, arcs, lines and polygons. All of them can be plotted in the coordinate plane with function *Draw* of the package, and the appropriate use of the possibilities R offers could help to learn different mathematical concepts or solve many kind of geometric problems. 
 
-Each of this five basic objects can be defined in a concrete way, and most of them are even possible to be described in several manners. In the next lines it is mentioned the way these objects can be built, and what is the data type, in the R language, which is associated with each of them.
+Each of this five basic objects can be defined in a concrete way, but most of them also admit different definitions. In the next lines it is mentioned the way these objects can be built, and what are the functions of the package that allow their creation.
 
 **Point**: A point can be created by simply defining a two-dimensional vector in R, e.g, c(0,0) for the usual origin of coordinates. It should be remarked that this definition is also the one used for the creation of a geometric vector to determine a direction in the plane. The coincidence of both definitions also exists if one follows classical mathematical notations, so it shouldn't be a source of confusion for the user.
 
@@ -46,19 +46,41 @@ The use of the pair slope-intercept has a problem with a particular type of line
 **Polygon**: A polygon is a closed figure made of a finite number of points (there must be 3 points at least). The function *CreatePolygon* admits any finite number of points to produce a polygon. It is important to introduce the points in a certain way to get the desired output, as the same combination of points can lead to different figures. In order to make a polygon without self-intersections, the points must be passed to the function following a clockwise (or counterclockwise) direction. If the user is interested in building a regular polygon, function *CreateRegularPolygon* does all the job.
 
 
-It is quite simple to create these objects with basic R functions, which belong to the graphics package, but the intention was to create an homogeneous group of functions with a minimal number of parameters. Although the pre-existing functions are simple to use for a programmer, they may contain too many parameters for a novice user. Moreover, it is vital to define the functions with a little number of parameters in order to highlight the different manners of creating the same geometric object.
+It is quite simple to create these objects with basic R functions, which belong to the *graphics* package, but the intention was to create an homogeneous group of functions with a minimal number of parameters. Although the pre-existing functions are simple to use for a programmer, they may contain too many parameters for a novice user. Moreover, it is vital to define the functions with a little number of parameters in order to highlight the different existing methods to define the same geometric object.
 
-The package includes the following functions that allow the creation of five types of objects: points, segments, arcs, lines and polygons. All of them can be plotted in a coordinate plane in order to learn different mathematical concepts or solve many kind of geometric problems.  
+The following code contains examples of use of some of the functions included in the package.
+
+```{r,fig.width=6, fig.height=6, fig.align="center"}
+library(LearnGeom)
+x_min <- -5 
+x_max <- 5 
+y_min <- -5 
+y_max <- 5 
+CoordinatePlane(x_min, x_max, y_min, y_max) 
+P1 <- c(0,0) 
+P2 <- c(1,1) 
+P3 <- c(2,0)  
+Poly <- CreatePolygon(P1, P2, P3) 
+Draw(Poly, "blue") 
+Hepta <- CreateRegularPolygon(7, c(-3,0), 1)
+Draw(Hepta, "orange")
+L <- CreateLinePoints(c(-1,0), c(0,3))
+Draw(L, "red")
+S <- CreateSegmentAngle(c(0,-2), 60, 1)
+Draw(S, "black")
+A <- CreateArcAngles(c(3,-2), 1, 0, 180, "anticlock")
+Draw(A, "black")
+```
+
 
 ## Affine transformations
 
 Affine functions are geometric transformations that preserve collinearity and ratios of distances. LearnGeom contains functions to apply six different affine transformations: **homothety**, **reflection**, **rotation**, **shear**, **similarity** and **translation**. Each of these transformations is associated with a 2 x 2 matrix, depending on one or several specific parameters. 
 
-For example, *Rotate* function can be used to rotate a line, a polygon or a segment. The following code can be used to rotate the triangle (in blue) that connects the points *P1* = (0,0), *P2* = (1,1) and *P3* = (2,0). There are shown two options for the *fixed* parameter: (-1,-1) and (2,0). These are the points that are left fixed by the rotation in each of the executions, producing different triangles as the output.
+For example, *Rotate* function can be used to rotate a line, a polygon or a segment. The following code can be used to rotate the triangle (in blue) that connects the points *P1* = (0,0), *P2* = (1,1) and *P3* = (2,0). There are shown two options for the *fixed* parameter: (-1,-1) and (2,0). These are the points that are left fixed by the rotation in each of the executions, producing different triangles in the plane.
 
 
-```{r}
-library(LearnGeom)
+```{r,fig.width=6, fig.height=6, fig.align="center"}
 x_min <- -5 
 x_max <- 5 
 y_min <- -5 
@@ -82,7 +104,7 @@ Draw(Poly_rotated, "transparent")
 
 As an example of combined use of the package functions and the R language capabilities, let's see how we can obtain some notable points of a triangle as the circumcenter or the incenter. The package also includes functions *Circumcenter* and *Incenter* to find these points with only one instruction.
 
-For example, the following blocks of code gives as a result the circumcenter of a triangle, that is, the intersection of the three perpendicular bisectors from each of the sides. First of all, it must be created the triangle.
+For example, the following blocks of code give as a result the circumcenter of a triangle, that is, the intersection of the three perpendicular bisectors from each of the sides. First of all, it must be created the triangle.
 
 ```{r}
 P1 <- c(0,0)
@@ -91,7 +113,7 @@ P3 <- c(2,0)
 Tri <- CreatePolygon(P1, P2, P3)
 ```
 
-Then, the vectors that connect each pair of points are computed, and also their corresponding orthogonal vectors.
+Then, the vectors that connect each pair of points are computed, and also their associated orthogonal vectors.
 
 ```{r}
 A <- Tri[1,]
@@ -130,9 +152,9 @@ L3 <- CreateLinePoints(BC_mid,BC1)
 I <- IntersectLines(L1,L2) 
 ```
 
-This final block of code draws all the important
+This final block of code draws all the important geometric objects involved in the obtention of the circumcenter (and the circumcenter itself).
 
-```{r}
+```{r,fig.width=6, fig.height=6, fig.align="center"}
 x_min <- -6
 x_max <- 6
 y_min <- -6
@@ -159,7 +181,7 @@ A tessellation, also known as a tiling, is a pattern that is made by repeating a
 For example, beehives, the perfect structures created by bees to produce their honey, can be considered as a tessellation made of regular hexagons. With the help of the function *Tessellation* is quite simple to generate a pattern that reminds a beehive, like the one in the next figure. The following code could be an starting point. The creation of a loop would allow the extension of the pattern to a wider region of the plane. 
 
 
-```{r}
+```{r,fig.width=6, fig.height=6, fig.align="center"}
 ## Creation of the starting hexagon, Hexa0
 x_min <- -5; x_max <- 5; y_min <- -5; y_max <- 5
 CoordinatePlane(x_min, x_max, y_min, y_max)
@@ -207,7 +229,7 @@ As an illustration, this definition can be easily intuited with the help of one 
 
 The following code uses function *Sierpinski* of the package to build the first iteration of the triangle and the three first iterations. It can be appreciated how the second figure contains nine little copies of the object represented at the first iteration.
 
-```{r}
+```{r,fig.width=6, fig.height=6, fig.align="center"}
 x_min <- -6
 x_max <- 6
 y_min <- -6
@@ -227,7 +249,7 @@ Of course, one can attempt to construct the Sierpinski triangle by programming r
 
 Another very important fractal is the one known as Koch's snowflake. The package contains a function called *FractalSegment* that is able to produce this fractal and much more of the same nature. The following code presents to possibilities of use of this function. There is only one difference in the parameters setting, but the outputs are very different. The curve which is obtained with *angle* = 60 is the aforementioned Koch's snowflake.
 
-```{r}
+```{r,fig.width=6, fig.height=6, fig.align="center"}
 x_min <- -6
 x_max <- 6
 y_min <- -4
@@ -243,7 +265,7 @@ it <- 4
 FractalSegment(P1, P2, angle, cut1, cut2, f, it)
 ```
 
-```{r}
+```{r,fig.width=6, fig.height=6, fig.align="center"}
 x_min <- -6
 x_max <- 6
 y_min <- -4
@@ -269,7 +291,7 @@ As it can be seen in the work of Abelson and DiSessa, the procedure to obtain an
 
 The following code includes three examples of use of the function *Duopoly* implemented in the package. Parameters *color* and *time* also allow the user to appreciate the points that are drawn in the generation of the trochoid and the order of them when building it. 
 
-```{r}
+```{r,fig.width=6, fig.height=6, fig.align="center"}
 P=c(0,0)
 CoordinatePlane(-100,100,-50,150)
 Duopoly(P,1,1,1,-3)

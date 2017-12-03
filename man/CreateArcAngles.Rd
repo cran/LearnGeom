@@ -4,7 +4,7 @@
 \alias{CreateArcAngles}
 \title{Creates an arc of a circumference}
 \usage{
-CreateArcAngles(C, r, angle1, angle2)
+CreateArcAngles(C, r, angle1, angle2, direction = "anticlock")
 }
 \arguments{
 \item{C}{Vector containing the xy-coordinates of the center of the circumference}
@@ -14,9 +14,11 @@ CreateArcAngles(C, r, angle1, angle2)
 \item{angle1}{- Angle in degrees (0-360) at which the arc starts}
 
 \item{angle2}{- Angle in degrees (0-360) at which the arc finishes}
+
+\item{direction}{- String indicating the direction which is considered to create the arc, from the smaller to the higher angle. It has two possible values: "clock" (clockwise direction) and "anticlock" (anti-clockwise direction)}
 }
 \value{
-Returns a vector which contains the center, radius and angles (0-360) that define the created arc
+Returns a vector which contains the center, radius, angles (0-360) and direction (1 - "clock", 2 - "anticlock") that define the created arc
 }
 \description{
 \code{CreateArcAngles} creates an arc of a circumference
@@ -31,6 +33,10 @@ C <- c(0,0)
 r <- 3
 angle1 <- 90
 angle2 <- 180
-Arc <- CreateArcAngles(C, r, angle1, angle2)
-Draw(Arc, "black")
+direction <- "anticlock"
+Arc1 <- CreateArcAngles(C, r, angle1, angle2, direction)
+Draw(Arc1, "black")
+direction <- "clock"
+Arc2 <- CreateArcAngles(C, r, angle1, angle2, direction)
+Draw(Arc2, "red")
 }

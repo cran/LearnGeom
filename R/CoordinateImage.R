@@ -9,7 +9,7 @@
 #' @return None. It produces a plot of a coordinate plane over a background image. It allows the user to use the functions of the package over a real and physical object
 #' @examples 
 #' library(RgoogleMaps)
-#' ima=GetMap("Plaza de San Pedro, Roma", zoom = 17, maptype = "satellite")
+#' ima=GetMap("Piazza San Pietro, 00120 Citta del Vaticano", zoom = 17, maptype = "satellite")
 #' ima=ima$myTile
 #' CoordinateImage(-6, 6, -6, 6, ima) 
 #' Draw(CreateArcAngles(c(0.8411822, 0), 1.5, 0, 360), "white")

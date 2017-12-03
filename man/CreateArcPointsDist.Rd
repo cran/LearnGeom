@@ -4,7 +4,7 @@
 \alias{CreateArcPointsDist}
 \title{Creates an arc of a circumference to connect two points}
 \usage{
-CreateArcPointsDist(P1, P2, r)
+CreateArcPointsDist(P1, P2, r, choice, direction)
 }
 \arguments{
 \item{P1}{Vector containing the xy-coordinates of point 1}
@@ -12,6 +12,10 @@ CreateArcPointsDist(P1, P2, r)
 \item{P2}{Vector containing the xy-coordinates of point 2}
 
 \item{r}{Radius for the circumference which is used to generate the arc. This parameter is necessary because there are infinite possible arcs that connect two points. In the case the radius is smaller than half the distance between \code{P1} and \code{P2}, there is no possible arc, so the function tells the user}
+
+\item{choice}{- Integer indicating which of the two possible centers is chosen to create the arcs. A value of 1 means the center of the circle that contains the arc is chosen in the direction of M + v, being M the middle point between P1 and P2 an v the orthogonal vector of P2 - P1 normalized to the appropriate length for creating the desired arc. A value of 2 means the center of the resulting circle is chosen in the direction of M - V. Remark: There are as well two options for vector v. If P1 = (a,b) and P2 = (c,d), v is written in the internal function as (b-d,c-a)}
+
+\item{direction}{- String indicating the direction which is considered to create the arc, from the smaller to the higher angle. It has two possible values: "clock" (clockwise direction) and "anticlock" (anti-clockwise direction)}
 }
 \value{
 Returns a vector which contains the center, radius and angles (0-360) that define the created arc
@@ -25,9 +29,23 @@ x_max <- 5
 y_min <- -5
 y_max <- 5
 CoordinatePlane(x_min, x_max, y_min, y_max)
-P1 <- c(0,0)
-P2 <- c(3,3)
+P1 <- c(-3,2)
+P2 <- c(0,0)
 r <- sqrt(18)/2
-Arc <- CreateArcPointsDist(P1, P2, r)
-Draw(Arc, "black")
+choice=1
+direction="anticlock"
+Arc <- CreateArcPointsDist(P1, P2, r, choice, direction)
+Draw(Arc, "red")
+choice=2
+direction="anticlock"
+Arc <- CreateArcPointsDist(P1, P2, r, choice, direction)
+Draw(Arc, "blue")
+choice=1
+direction="clock"
+Arc <- CreateArcPointsDist(P1, P2, r, choice, direction)
+Draw(Arc, "pink")
+choice=2
+direction="clock"
+Arc <- CreateArcPointsDist(P1, P2, r, choice, direction)
+Draw(Arc, "green")
 }
