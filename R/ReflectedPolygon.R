@@ -1,7 +1,7 @@
 #' Creates the reflection about a line of a given polygon
 #' 
 #' \code{ReflectedPolygon} creates the reflection about a line of a given polygon
-#' @param Poly Polygon object, previously created with function \code{CreatePolygon}
+#' @param Poly Polygon object, previously created with function \code{CreatePolygon} or \code{CreateRegularPolygon}
 #' @param Line Line object previously created with \code{CreateLinePoints} or \code{CreateLineAngle}, to be used as the axis of symmetry
 #' @return Returns the reflection of a polygon about a line 
 #' @examples 

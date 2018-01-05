@@ -1,6 +1,6 @@
 ---
 title: "Learning Plane Geometry "
-author: "Alvaro Briz Redon"
+author: "Alvaro Briz Redon, Angel Serrano Aroca"
 date: "`r Sys.Date()`"
 output: pdf_document
 vignette: >

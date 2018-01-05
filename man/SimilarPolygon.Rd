@@ -7,7 +7,7 @@
 SimilarPolygon(Poly, k)
 }
 \arguments{
-\item{Poly}{Polygon object, previously created with function \code{CreatePolygon}}
+\item{Poly}{Polygon object, previously created with function \code{CreatePolygon} or \code{CreateRegularPolygon}}
 
 \item{k}{Positive number that represents the expansion (k > 1) or contraction (k < 1) factor which is applied to the original polygon}
 }

@@ -7,7 +7,7 @@
 ReflectedPolygon(Poly, Line)
 }
 \arguments{
-\item{Poly}{Polygon object, previously created with function \code{CreatePolygon}}
+\item{Poly}{Polygon object, previously created with function \code{CreatePolygon} or \code{CreateRegularPolygon}}
 
 \item{Line}{Line object previously created with \code{CreateLinePoints} or \code{CreateLineAngle}, to be used as the axis of symmetry}
 }

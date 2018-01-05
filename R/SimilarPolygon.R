@@ -1,7 +1,7 @@
 #' Creates a similar polygon to a given one
 #' 
 #' \code{SimilarPolygon} creates a sheared polygon from a given one
-#' @param Poly Polygon object, previously created with function \code{CreatePolygon}
+#' @param Poly Polygon object, previously created with function \code{CreatePolygon} or \code{CreateRegularPolygon}
 #' @param k Positive number that represents the expansion (k > 1) or contraction (k < 1) factor which is applied to the original polygon
 #' @return Returns a similar polygon, exapended or contracted, to the original polygon
 #' @examples 

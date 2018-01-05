@@ -7,7 +7,7 @@
 ShearedPolygon(Poly, k, direction)
 }
 \arguments{
-\item{Poly}{Polygon object, previously created with function \code{CreatePolygon}}
+\item{Poly}{Polygon object, previously created with function \code{CreatePolygon} or \code{CreateRegularPolygon}}
 
 \item{k}{Number that represents the shear factor which is applied to the original polygon}
 

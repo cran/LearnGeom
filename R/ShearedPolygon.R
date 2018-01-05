@@ -1,7 +1,7 @@
 #' Creates a sheared polygon from a given one
 #' 
 #' \code{ShearedPolygon} creates a sheared polygon from a given one
-#' @param Poly Polygon object, previously created with function \code{CreatePolygon}
+#' @param Poly Polygon object, previously created with function \code{CreatePolygon} or \code{CreateRegularPolygon}
 #' @param k Number that represents the shear factor which is applied to the original polygon
 #' @param direction String with value "horizontal" or "vertical" which indicates the direction in which shearing is applied. Horizontal means the shearing is parallel to the X axis, while vertical means parallel to the Y axis
 #' @return Returns a sheared polygon, in any of the two axis, to the original one

@@ -15,6 +15,24 @@ CreatePolygon <- function(...){
   for (i in c(1:length(points_list))){
     Poly=rbind(Poly,points_list[[i]])
   }
+  combinaciones=c()
+  n=nrow(Poly)
+  for (i in c(1:(n-1))){
+    for (j in c((i+1):n)){
+      if (i!=j){
+        combinaciones=cbind(combinaciones,c(i,j))
+      }
+    }
+  }  
+  ### Search of collinear points
+  vectores=c()
+  for (i in c(1:ncol(combinaciones))){
+    vectores=rbind(vectores,Poly[combinaciones[1,i],]-Poly[combinaciones[2,i],],
+                           -Poly[combinaciones[1,i],]+Poly[combinaciones[2,i],])
+  }
+  if (length(duplicated(vectores))>0){
+    print("Some of the inserted points are collinear. This could lead to a defective polygon.")
+  }
   colnames(Poly)=c("X","Y")
   class(Poly) <- append(class(Poly),"Polygon")
   return(Poly)
