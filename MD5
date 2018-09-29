@@ -1,10 +1,9 @@
-ffcb2593f3b4ff696290421bdb9ea2c9 *DESCRIPTION
-0173bc377e3b53b3de486229e55230a1 *NAMESPACE
+6d3fb9a1bae2ea92dc436788bfd48fd1 *DESCRIPTION
+5d2b8b425e3d9d3be34eb68c3e364aea *NAMESPACE
 388c012d38a4f9c57b3d4a01aebe3cd8 *R/AddPointPoly.R
 f644780a9b6c612043b1742d5e79074a *R/Angle.R
 3c1db8bed1181ec6c9ef372d27193566 *R/CenterPolygon.R
 30b12fa3e4d6eb28a0d4d5004e5ece8b *R/Circumcenter.R
-1e67656d08a80819dc7613e1cefb5614 *R/CoordinateImage.R
 24c391579781ac1d01203b14017f000a *R/CoordinatePlane.R
 c921be4701ec9793f2af6e213167a67f *R/CreateArcAngles.R
 76c7f006f982afef7dc65fa515bd3ac0 *R/CreateArcPointsDist.R
@@ -27,7 +26,7 @@ c0333494f7f28c34671e2f0fd81d2bf7 *R/DrawSegmentAngle.R
 8f2a1233b240339723a1b98ba4f5bd46 *R/Duopoly.R
 a73ce837f32d98dc3b632bd792beb995 *R/FractalSegment.R
 4ac78537b87244a377bb38b517afb8a1 *R/Homothety.R
-18b1d692b5adf0c855068f1c343912d0 *R/ImportPackages.R
+bd6a3b9f94356406d5490ef671e3ecdb *R/ImportPackages.R
 426c51e02abf4c736ee014e946c74853 *R/Incenter.R
 7e36cca3028d1c1cf0a5ebdc664eb81a *R/IntersectLineCircle.R
 96fcde0bd554c69674cdb04a78d47382 *R/IntersectLines.R
@@ -52,15 +51,11 @@ c5a67847319ddf653c034b4a9efb6b17 *R/Right.R
 37bb658ad765e7a8c327c9235f41b702 *R/Star.R
 fe928f291d1d7f79778d42bff885df48 *R/Tessellation.R
 77ccf3221f13f5feffaae151a8fbeea8 *R/Translation.R
-c6a85c29acb209ab01730563127801a0 *build/vignette.rds
-a20c8c91c944e898bd2421b6f986c41d *inst/doc/my-vignette.R
-5f62c84b19761f6e1fe91a470d1f7185 *inst/doc/my-vignette.Rmd
-b9c5fb0de290c1bea8ee263d552813e5 *inst/doc/my-vignette.pdf
+fb3dd4208eb107e90ddef73da12d4ca9 *inst/CITATION
 869e03e27e4957278eef9b448d5cbf73 *man/AddPointPoly.Rd
 3509b72c0bd90e7b851eff4d5bca488e *man/Angle.Rd
 574774b7d201bf6dcf01a930510a00c1 *man/CenterPolygon.Rd
 02fe9ad0457857ca2ae98873c2692f14 *man/Circumcenter.Rd
-7cbb010f26ad91fe199474bb3a63217e *man/CoordinateImage.Rd
 5c93f063a6e4b7a6748d1e0e7dd9a7be *man/CoordinatePlane.Rd
 813246ba6f77125d5016b33cee527101 *man/CreateArcAngles.Rd
 a21ac01c69f6aba37fae8233524ec05b *man/CreateArcPointsDist.Rd
@@ -97,4 +92,3 @@ ce1c5ce0dc740934457a4a14afe54440 *man/Rotate.Rd
 74e7f1a2f27db41fb3c28e04f9fb9167 *man/Star.Rd
 0b234cadece41aacf029e28a9adf8321 *man/Tessellation.Rd
 0aa2ad05d71dee1d7607520fbae2d610 *man/Translate.Rd
-5f62c84b19761f6e1fe91a470d1f7185 *vignettes/my-vignette.Rmd

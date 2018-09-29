@@ -1,0 +1,18 @@
+citHeader("To cite LearnGeom in publications use:")
+
+citEntry(entry = "Article",
+  title        = "Novel pedagogical tool for simultaneous learning of plane geometry and R programming",
+  author       = personList(as.person("Alvaro Briz-Redon"),
+                   as.person("Angel Serrano-Aroca")),
+  journal      = "Research Ideas and Outcomes",
+  year         = "2018",
+  volume       = "4",
+  pages        = "e25485",
+  url          = "https://riojournal.com/articles.php?id=25485",
+
+  textVersion  =
+  paste("Alvaro Briz-Redon, Angel Serrano-Aroca (2018).",
+        "Novel pedagogical tool for simultaneous learning of plane geometry and R programming",
+        "Research Ideas and Outcomes, 4, e25485",
+        "URL https://riojournal.com/articles.php?id=25485")
+)
