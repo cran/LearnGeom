@@ -41,19 +41,21 @@ Rotate<-function(object, fixed, angle){
       return(object_new)
     }
   }
-  if (length(class(object))==1){
-      object=t(as.matrix(object))
+  else{
+    # if (length(class(object))==3){
+    #     object=t(as.matrix(object))
+    # }
+    xx=object[,1]
+    yy=object[,2]
+    x_fixed=fixed[1]
+    y_fixed=fixed[2]
+    angle_rad=-2*pi*angle/360
+    xx_new=(xx-x_fixed)*cos(angle_rad)-(yy-y_fixed)*sin(angle_rad)+x_fixed
+    yy_new=(xx-x_fixed)*sin(angle_rad)+(yy-y_fixed)*cos(angle_rad)+y_fixed
+    object_new=cbind(xx_new,yy_new)
+    colnames(object_new)=c("X","Y")
+    class(object_new) <- append(class(object_new),class(object)[length(class(object))])
   }
-  xx=object[,1]
-  yy=object[,2]
-  x_fixed=fixed[1]
-  y_fixed=fixed[2]
-  angle_rad=-2*pi*angle/360
-  xx_new=(xx-x_fixed)*cos(angle_rad)-(yy-y_fixed)*sin(angle_rad)+x_fixed
-  yy_new=(xx-x_fixed)*sin(angle_rad)+(yy-y_fixed)*cos(angle_rad)+y_fixed
-  object_new=cbind(xx_new,yy_new)
-  colnames(object_new)=c("X","Y")
-  class(object_new) <- append(class(object_new),class(object)[2])
   return(object_new)
 }
 

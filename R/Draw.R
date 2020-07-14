@@ -29,7 +29,8 @@ Draw<-function(object, colors=c("black","black"), label=FALSE){
   if (class(object)[1]=="numeric" & length(class(object))==1){
     DrawPoint(object,colors[1])
   } else{
-      if (class(object)[2]=="Polygon"){
+    if (length(class(object))==3){
+      if (class(object)[3]=="Polygon"){
         if (length(colors)==1 & label==TRUE){
           DrawPolygon(object,colors[1],label=TRUE)
         } else if (length(colors)==1 & label==FALSE){
@@ -40,11 +41,12 @@ Draw<-function(object, colors=c("black","black"), label=FALSE){
           DrawPolygon(object,colors[1],colors[2])
         }
       }
+      if (class(object)[3]=="Segment"){
+        DrawSegmentPoints(object[1,],object[2,],colors[1])
+      }
+    } else{
       if (class(object)[2]=="Line"){
         DrawLine(object,colors[1])
-      }
-      if (class(object)[2]=="Segment"){
-        DrawSegmentPoints(object[1,],object[2,],colors[1])
       }
       if (class(object)[2]=="Arc"){
         if (object[6]==1){
@@ -54,6 +56,7 @@ Draw<-function(object, colors=c("black","black"), label=FALSE){
           DrawArc(c(object[1],object[2]),object[3],max(c(object[4],object[5])),min(c(object[4],object[5]))+360,colors[1])
         }
       }
+    }
   }
   return()
 }

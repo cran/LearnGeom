@@ -1,5 +1,5 @@
-6d3fb9a1bae2ea92dc436788bfd48fd1 *DESCRIPTION
-5d2b8b425e3d9d3be34eb68c3e364aea *NAMESPACE
+58c23c5d00493cf65d95a19ca5e0b29b *DESCRIPTION
+fc2ef933efd9cb9069605a2e3d0d389e *NAMESPACE
 388c012d38a4f9c57b3d4a01aebe3cd8 *R/AddPointPoly.R
 f644780a9b6c612043b1742d5e79074a *R/Angle.R
 3c1db8bed1181ec6c9ef372d27193566 *R/CenterPolygon.R
@@ -10,13 +10,13 @@ c921be4701ec9793f2af6e213167a67f *R/CreateArcAngles.R
 e88dd25964112cbe66b73f9420a25341 *R/CreateLineAngle.R
 e8018ed69edff2bf20a3753255cc22c6 *R/CreateLinePoints.R
 3c3a6aef9d52dc3070d30a7109564c2a *R/CreatePolygon.R
-e189b6638dfef158c9be8f26f8d4d0f9 *R/CreateRegularPolygon.R
+de32d9fda9478523d6862d5df26cceb9 *R/CreateRegularPolygon.R
 6584a5170e736803f9581b5a4a36ae65 *R/CreateSegmentAngle.R
 0f9002664a3175f5c9b4ce7266028d16 *R/CreateSegmentPoints.R
 cca3ae870afb14dc3f7ec56af986ef4d *R/DistanceLines.R
 9e89484ab0af54d11b6462cacaabfd7d *R/DistancePointLine.R
 c4166138ed7ae833c168172db3383210 *R/DistancePoints.R
-6563bdd49cdf3ae0a2e0b7aa52741076 *R/Draw.R
+94123ee7957f09cc7b31338dd6c57fa8 *R/Draw.R
 9382b127a6909c469fe815e96b42cdd8 *R/DrawArc.R
 77f6b9f908424e74e1cd71c42ea2aa1c *R/DrawLine.R
 608c8f76c792f3569115ff72f16aa726 *R/DrawPoint.R
@@ -40,7 +40,7 @@ bfaac52ff2d7e3cee38242e67b91ad3b *R/ReflectedPoint.R
 6d549694197c8db87b73b0e399da0e39 *R/ReflectedPolygon.R
 5eb7fa40d2ef5ca8588ad003338976b8 *R/RemovePointPoly.R
 c5a67847319ddf653c034b4a9efb6b17 *R/Right.R
-78783f8392661cea0da5f10e42a279d1 *R/Rotation.R
+3daa7af1307c6b3ca530c5b7c5561896 *R/Rotation.R
 202b90ef7fe699424ca536f9be16898b *R/Scissor.R
 54709869bf39876b215846bb50f0d790 *R/Scissor_Poly.R
 2e5009057c08bd462e2293227e40234e *R/SelectPoints.R
@@ -52,6 +52,8 @@ c5a67847319ddf653c034b4a9efb6b17 *R/Right.R
 fe928f291d1d7f79778d42bff885df48 *R/Tessellation.R
 77ccf3221f13f5feffaae151a8fbeea8 *R/Translation.R
 fb3dd4208eb107e90ddef73da12d4ca9 *inst/CITATION
+901838ae5a5eaa720db0943d5bab9b0d *inst/doc/my-vignette.Rmd
+af356f96a027402b9d2e1f4efc16ba73 *inst/doc/my-vignette.pdf
 869e03e27e4957278eef9b448d5cbf73 *man/AddPointPoly.Rd
 3509b72c0bd90e7b851eff4d5bca488e *man/Angle.Rd
 574774b7d201bf6dcf01a930510a00c1 *man/CenterPolygon.Rd

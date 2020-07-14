@@ -24,7 +24,7 @@ CreateRegularPolygon <- function(n, C, l){
     Poly=rbind(Poly,c(C[1]+l*sin(i*angle),C[2]+l*cos(i*angle)))
   }
   colnames(Poly)=c("X","Y")
-  class(Poly) <- c("matrix","Polygon")
+  class(Poly) <- append(class(Poly),"Polygon")
   if (n==4){
     Poly=Rotate(Poly,CenterPolygon(Poly),45)
   }
